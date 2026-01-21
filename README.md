@@ -1,63 +1,62 @@
-# Sistema de Biblioteca
+# Library System
 
-## Descrição
+## Description
 
-Este projeto implementa um sistema simples de biblioteca utilizando PHP e Programação Orientada a Objetos (POO). Ele permite gerenciar livros, autores, usuários e empréstimos de livros. O sistema é composto por várias classes que representam os diferentes elementos do domínio da biblioteca.
+This project implements a simple library system using PHP and Object-Oriented Programming (OOP). It allows managing books, authors, users, and book loans. The system is composed of several classes that represent the different elements of the library domain.
 
 ## Classes
 
-### Pessoa
+### Pessoa (Person)
 
-- **Atributos:**
+- **Attributes:**
   - `nome`: string
   - `idade`: int
 
-- **Métodos:**
-  - `__construct($nome, $idade)`: Construtor para inicializar uma pessoa com nome e idade.
-  - `getNome()`: Retorna o nome da pessoa.
-  - `getIdade()`: Retorna a idade da pessoa.
+- **Methods:**
+  - `__construct($nome, $idade)`: Constructor to initialize a person with name and age.
+  - `getNome()`: Returns the person's name.
+  - `getIdade()`: Returns the person's age.
 
-### Autor (herda de Pessoa)
+### Autor (Author) - extends Pessoa
 
-- **Atributos:**
+- **Attributes:**
   - `obras`: array
 
-- **Métodos:**
-  - `adicionarObra($obra)`: Adiciona uma obra ao array de obras do autor.
-  - `listarObras()`: Retorna um array com as obras do autor.
+- **Methods:**
+  - `adicionarObra($obra)`: Adds a work to the author's works array.
+  - `listarObras()`: Returns an array with the author's works.
 
-### Usuario (herda de Pessoa)
+### Usuario (User) - extends Pessoa
 
-- **Atributos:**
+- **Attributes:**
   - `livrosEmprestados`: array
 
-- **Métodos:**
-  - `pegarLivro($livro)`: Adiciona um livro ao array de livros emprestados pelo usuário e imprime uma mensagem.
-  - `devolverLivro($livro)`: Remove um livro do array de livros emprestados pelo usuário e imprime uma mensagem.
-  - `listarLivrosEmprestados()`: Retorna um array com os livros emprestados pelo usuário.
+- **Methods:**
+  - `pegarLivro($livro)`: Adds a book to the user's borrowed books array and prints a message.
+  - `devolverLivro($livro)`: Removes a book from the user's borrowed books array and prints a message.
+  - `listarLivrosEmprestados()`: Returns an array with the books borrowed by the user.
 
-### Livro
+### Livro (Book)
 
-- **Atributos:**
+- **Attributes:**
   - `titulo`: string
   - `autor`: Autor
 
-- **Métodos:**
-  - `__construct($titulo, $autor)`: Construtor para inicializar um livro com título e autor.
-  - `getTitulo()`: Retorna o título do livro.
-  - `getAutor()`: Retorna o autor do livro.
+- **Methods:**
+  - `__construct($titulo, $autor)`: Constructor to initialize a book with title and author.
+  - `getTitulo()`: Returns the book's title.
+  - `getAutor()`: Returns the book's author.
 
-### Biblioteca
+### Biblioteca (Library)
 
-- **Atributos:**
+- **Attributes:**
   - `livros`: array
 
-- **Métodos:**
-  - `adicionarLivro($livro)`: Adiciona um livro ao array de livros da biblioteca.
-  - `listarLivros()`: Retorna um array com os livros disponíveis na biblioteca.
+- **Methods:**
+  - `adicionarLivro($livro)`: Adds a book to the library's books array.
+  - `listarLivros()`: Returns an array with the books available in the library.
 
-## Requisitos
+## Requirements
 
-- PHP 7.4 ou superior
-- Servidor web (recomendado: XAMPP)
-
+- PHP 7.4 or higher
+- Web server (recommended: XAMPP)
